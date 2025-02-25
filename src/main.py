@@ -9,6 +9,8 @@ import face_recognition
 from joblib import Parallel, delayed
 from PIL import Image, ImageDraw
 
+import cli as _cli
+
 # Configure logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
@@ -114,3 +116,7 @@ def validate(model: str = "hog"):
         if filepath.is_file():
             recognize_faces(images_path=str(filepath.absolute()), model=model)
     logger.info("Finished validating unknown faces")
+
+
+if __name__ == "__main__":
+    _cli.cli()

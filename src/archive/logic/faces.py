@@ -5,14 +5,18 @@ from io import BytesIO
 from typing import Any, Dict, List, Tuple, Union
 
 import imageio
+import logic.utils.emotion_utils
+import logic.utils.gender_utils
 import numpy as np
 from data_access.data_access import DataAccess
+from logic.utils.celebs_utils import CelebsUtils
+from logic.utils.detection_utils import detect_on_single_image
+from logic.utils.facenet_utils import FacenetUtils
+from logic.utils.noise_utils import get_noise_predictions
 from scipy.spatial import cKDTree
 from skimage import transform
 from sklearn.cluster import AgglomerativeClustering
 
-import logic.utils.emotion_utils
-import logic.utils.gender_utils
 from config.faces_api_exceptions import (BadBatchLengthForGroupingRecognition,
                                          ClientNotExistsException,
                                          InvalidBase64CodeException,
@@ -23,10 +27,6 @@ from config.settings import (DEFAULT_CELEBRITY_RECOGNITION_COEFFICIENT,
                              DEFAULT_FACE_IMAGE_SIZE,
                              DEFAULT_RECOGNITION_THRESHOLD,
                              LOWER_RECOGNITION_THRESHOLD, UNKNOWN_FACES_LIMIT)
-from logic.utils.celebs_utils import CelebsUtils
-from logic.utils.detection_utils import detect_on_single_image
-from logic.utils.facenet_utils import FacenetUtils
-from logic.utils.noise_utils import get_noise_predictions
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

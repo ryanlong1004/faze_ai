@@ -1,5 +1,12 @@
 # Faze AI
 
+## Ongoing Questions
+
+- For continuous training
+  - Do we deploy these as `crawlers`, like web crawlers only buckets intead of websites
+  - Do we need a database for v1?  Saving the pickled encodings to the customer bucket is pretty secure.
+  - Open browser windows for display
+
 ## Overview
 
 Faze AI is a face recognition tool that allows you to encode known faces, recognize faces in images, and validate unknown faces using a command-line interface (CLI).

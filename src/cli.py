@@ -1,9 +1,10 @@
-from pathlib import Path
 import logging
+from pathlib import Path
 
 import click
 
-from main import DEFAULT_ENCODINGS_PATH, encode_known_faces, recognize_faces, validate
+from main import (DEFAULT_ENCODINGS_PATH, encode_known_faces, recognize_faces,
+                  validate)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")

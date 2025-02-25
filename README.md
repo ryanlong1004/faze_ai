@@ -1,3 +1,4 @@
+![Faze AI](image.png)
 # Faze AI
 
 ## Ongoing Questions
